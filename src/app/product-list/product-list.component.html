@@ -1,0 +1,20 @@
+<h2>手机列表</h2>
+
+<div *ngFor="let v of product_list">
+
+  <h3>
+    <a [title]="v.name + ' details'" href="/product-detail"> {{ v.name }} </a>
+  </h3>
+
+
+  <p *ngIf="v.description">
+    AAA: {{ v.description }}
+  </p>
+
+  <button (click)="share()">
+     Share
+  </button>
+
+  <app-product-alerts [product]='v' [price]='v.price' (notify)="onNotify()"></app-product-alerts>
+
+</div>
